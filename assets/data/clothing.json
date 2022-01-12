@@ -1,0 +1,140 @@
+var clothing = 
+[
+    {
+        "categoryName": "Head",
+        "clothing":
+        [
+            {
+                "name": "Cycling Cap",
+                "min": "45",
+                "max": "120"
+            },
+            {
+                "name": "Wool Cap",
+                "min": "-20",
+                "max": "45"  
+            },
+            {
+                "name": "Helmet Cover",
+                "min": "-20",
+                "max": "34"
+            }
+        ]
+    },
+    {
+        "categoryName": "Neck",
+        "clothing":
+        [
+            {
+                "name": "Neck Buff",
+                "min": "-20",
+                "max": "40"
+            }
+        ]
+    },
+    {
+        "categoryName": "Torso",
+        "clothing":
+        [
+            {
+                "name": "T-Shirt (Or less)",
+                "min": "55",
+                "max": "120"
+            },
+            {
+                "name": "Beefy-T",
+                "min": "-20",
+                "max": "54"
+            },
+            {
+                "name": "Under Armour",
+                "min": "-20",
+                "max": "45"
+            },
+            {
+                "name": "Light Jacket",
+                "min": "39", 
+                "max": "49"
+            },
+            {
+                "name": "Heavy Jacket",
+                "min": "-20",
+                "max": "38"
+            }
+        ]
+    },
+    {
+        "categoryName": "Hands",
+        "clothing":
+        [
+            {
+                "name": "Fingerless Gloves",
+                "min": "45",
+                "max": "120"
+            },
+            {
+                "name": "LongFinger Gloves",
+                "min": "-120",
+                "max": "44"
+            },
+            {
+                "name": "Bar Mitts",
+                "min": "-120",
+                "max": "24"
+            }
+        ]
+    },
+    {
+        "categoryName": "Legs",
+        "clothing":
+        [
+            {
+                "name": "Shorts",
+                "min": "50",
+                "max": "120"
+            },
+            {
+                "name": "Light Tights",
+                "min": "35",
+                "max": "49"
+            },
+            {
+                "name": "Heavy Tights",
+                "min": "-120",
+                "max": "34"
+            }
+        ]
+    },
+    {
+        "categoryName": "Ankles",
+        "clothing":
+        [
+            {
+                "name": "No-Show Socks",
+                "min": "45",
+                "max": "120"
+            },
+            {
+                "name": "Long Socks",
+                "min": "24",
+                "max": "44"
+            },
+            {
+                "name": "Wool Socks",
+                "min": "-20",
+                "max": "23"
+            }
+        ]
+    },
+    {
+        "categoryName": "Feet",
+        "clothing":
+        [
+            {
+                "name": "Overshoes",
+                "min": "-20",
+                "max": "32"
+            }
+        ]
+    }
+]

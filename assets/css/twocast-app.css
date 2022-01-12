@@ -1,0 +1,156 @@
+/* General App Classes */
+#cyclecast-app .app-border-radius { border-radius: 4px; }
+#cyclecast-app .app-float-right { float: right; }
+#cyclecast-app .vert-align { vertical-align: middle; }
+#cyclecast-app .float-r { float: right; }
+#cyclecast-app .float-l { float: left; }
+#cyclecast-app .shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); }
+
+/* General: App Light-Scheme Colors */
+#cyclecast-app.light-scheme { background-color: #EEEEEE; }
+#cyclecast-app.light-scheme .route { background-color: #FFFFFF;}
+#cyclecast-app.light-scheme .route select { border: 1px solid #F2F2F2; color: #A6A6A6; }
+#cyclecast-app.light-scheme .route-desc { background-color: #F2F2F2; color: #A6A6A6}
+#cyclecast-app.light-scheme .weather-icon { border: 1px solid #F2F2F2; background-color: #FFFFFF; }
+#cyclecast-app.light-scheme .app-cta { background-color: #FFFFFF; color: #484848; }
+#cyclecast-app.light-scheme .tr-title { color: #484848;}
+#cyclecast-app.light-scheme .tr-content { border-top: 1px solid #F2F2F2; color: #A6A6A6;}
+
+/* General: App Light-Scheme Colors */
+#cyclecast-app.dark-scheme { background-color: #343434; }
+#cyclecast-app.dark-scheme .route { background-color: #484848; }
+#cyclecast-app.dark-scheme #app-title { color: #F2F2F2; }
+#cyclecast-app.dark-scheme .route select { border: 1px solid #5C5C5C; background-color: #484848; color: #F2F2F2; }
+#cyclecast-app.dark-scheme .tr-title { color: #F2F2F2; }
+#cyclecast-app.dark-scheme .weather-icon { border: 1px solid #A6A6A6; background-color: #FFF; }
+#cyclecast-app.dark-scheme .route-desc { background-color: #A6A6A6; color: #484848 }
+#cyclecast-app.dark-scheme .tr-content { border-top: 1px solid #5C5C5C; color: #F2F2F2; }
+#cyclecast-app.dark-scheme .app-cta { border: 1px solid #5C5C5C; background-color: #484848; color: #F2F2F2; }
+#cyclecast-app.dark-scheme .app-cta svg path { fill: #F2F2F2; }
+
+/* General: App Standard Colors */
+#cyclecast-app .app-orange-text {	color: #EC6E4C; }
+#cyclecast-app .app-light-text { color: #F2F2F2; }
+#cyclecast-app .app-dark-grey-text { color: #484848; }
+#cyclecast-app .app-dark-grey-text { color: #A6A6A6; }
+#cyclecast-app .app-cta.cancel span { color: #EC6E4C; }
+#cyclecast-app .app-cta.cancel svg path { fill: #EC6E4C; }
+
+#cyclecast-app {
+	margin: 0px 0px 0px 0px;
+	padding: 10px 10px 10px 10px;
+}
+
+#cyclecast-app section {
+	width: 100%;
+}
+
+#cyclecast-app #app-title {
+	margin: 10px 0px 10px 0px;
+}
+#cyclecast-app nav {
+	display: block;
+	height: 40px;
+}
+
+
+#cyclecast-app .route {
+	/* border: 1px solid green; */
+	margin: 20px 0px 0px 0px;
+	padding: 10px;
+	/* max-width: 400px; */
+}
+
+#cyclecast-app .tr-content:nth-child(4) {
+	border-top: none;
+}
+
+#cyclecast-app .route select {
+	margin: 2px 0px 0px 0px;
+	padding: 4px 15px 4px 4px;
+}
+
+#cyclecast-app .route-id {
+	color: #EC6E4C;
+	font-size: 18px;
+}
+
+#cyclecast-app tr.forecast td {
+	/* border: 1px solid salmon; */
+	padding: 4px 0px 2px 0px;
+}
+
+#cyclecast-app .tr-content {
+	height: 60px;
+}
+
+#cyclecast-app .td-index-col {
+	/* width: 70px; */
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+#cyclecast-app .td-content-col {
+	/* width: 260px; */
+	width: 99%;
+}
+
+#cyclecast-app .route-desc {
+	margin: 5px 0px -3px 0px;
+	padding: 3px 0px 3px 5px;
+}
+
+#cyclecast-app .weather-icon {
+	height: 45px;
+	width: 45px;
+}
+
+#cyclecast-app .weather-icon img {
+	height: 50px;
+	width: 50px;
+}
+
+#cyclecast-app .app-icon-svg.set-height {
+	height: 35px;
+}
+
+#cyclecast-app .app-icon-svg.set-width {
+	width: 35px;
+}
+
+#cyclecast-app .articles {
+	margin: 2px 0 5px 0;
+	padding: 2px 0 5px 0;
+}
+
+
+#cyclecast-app .app-cta {
+	padding: 5px 10px 5px 10px;
+	height: 22px;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+}
+#cyclecast-app .app-cta span {
+	display: flex;
+	margin: 5px 0px 0px 25px;
+	font-size: .8rem;
+}
+#cyclecast-app .app-cta svg {
+	margin: 3px 0px 0px 0px;
+	position: absolute;
+	height: 16px;
+	width: 16px;
+}
+#cyclecast-app .app-cta.add-route {
+	margin: 15px 0px 0px 0px;
+}
+#cyclecast-app .cancel-route .app-cta {
+	margin: 15px 2px 4px 0px;
+}
+
+#cyclecast-app tabs {
+	border: 1px solid salmon;
+	display: block;
+	margin: -100px 0 0 0;
+}
