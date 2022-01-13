@@ -7,11 +7,26 @@ var app = angular.module('temperature-app', [])
 	$scope.onecallURL = api.fullRequestURL;
 	$scope.winWidth = 0;
 
-	$scope.currentTab = 'Routes';
+	$scope.ui = {
+		activeTab: 'Clothing',
+		tabs : [
+			{
+				title: "Routes"
+			},
+			{
+				title: "Clothing"
+			},
+			{
+				title: "API"
+			}
+		]
+	};
 
-	$scope.setTab = function(tab)
+	$scope.setActiveTab = function(tabTitle)
 	{
-		$scope.currentTab = tab;
+		$scope.ui.activeTab = tabTitle;
+		console.log("Setting tab: " + tabTitle + " as active");
+		console.log($scope.ui.activeTab);
 	};
 
 	$scope.FetchData = function () {
