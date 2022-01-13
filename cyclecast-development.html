@@ -41,11 +41,11 @@
 			</span>
 		</nav>
 	
-		<!-- <tabs>
-			<span>Routes</span>
-			<span>Article Table</span>
-			<span>API Fields</span>
-		</tabs> -->
+		<tabs class="app-border-radius">
+			<span class="shadow active">Routes</span>
+			<span class="shadow">Clothing</span>
+			<span class="shadow">API Fields</span>
+		</tabs>
 
 		<div ng-repeat="route in Routes" class="route app-border-radius shadow">
 			<table>
@@ -59,6 +59,13 @@
 						<select ng-model="Routes[$index].data"
 								ng-options="hour as hour.longOptText for hour in hours"
 								ng-change="setClothing($index)"
+								ng-if="windowWidth > 360"
+								class="app-float-right app-border-radius shadow">
+						</select>
+						<select ng-model="Routes[$index].data"
+						        ng-options="hour as hour.shortOptText for hour in hours"
+								ng-change="setClothing($index)"
+								ng-if="windowWidth <= 360"
 								class="app-float-right app-border-radius shadow">
 						</select>
 					</td>
@@ -70,9 +77,20 @@
 						<img ng-src="{{ Routes[$index].data.weatherIconURL }}" class="weather-icon app-border-radius"/>
 					</td>
 					<td class="vert-align">
-						<p>
+						<p ng-if="windowWidth > 360">
 							<span class="b">{{ Routes[$index].data.temp }}°F</span>
 							<span>Feels like</span>
+							<span class="app-orange-text b">{{ Routes[$index].data.feels_like }}°F</span>
+							<span>|</span>
+							<span class="b">{{ Routes[$index].data.wind_gust }}</span>
+							<span>mph</span>
+							<span>
+								<img src="assets/images/wind-icon-color.png" alt="" style="height: 12px;">
+							</span>
+						</p>
+						<p ng-if="windowWidth <= 360">
+							<span class="b">{{ Routes[$index].data.temp }}°F</span>
+							<span>→</span>
 							<span class="app-orange-text b">{{ Routes[$index].data.feels_like }}°F</span>
 							<span>|</span>
 							<span class="b">{{ Routes[$index].data.wind_gust }}</span>
@@ -100,7 +118,7 @@
 							<path d="M396.49,409.89c-18.89-13.85-33.57-31.44-45.84-50.95l8.51-10.68c24.93,17.83,49.94,17.38,74.63-.68,2,2.62,3.87,5.18,5.82,7.69a21,21,0,0,0,2.44,2.63c.65.6.45,1,.08,1.63a199.91,199.91,0,0,1-14,19.74,163.24,163.24,0,0,1-30.51,29.83Z" transform="translate(-271.31 -166.97)" fill="#fff"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Head" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -116,7 +134,7 @@
 							<path d="M331.35,359.82a5.57,5.57,0,0,1,.36-11.14,5.43,5.43,0,0,1,5.36,5.74A5.5,5.5,0,0,1,331.35,359.82Z" transform="translate(-256.74 -210.36)" fill="#ec6e4c"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Neck" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -136,7 +154,7 @@
 							<path d="M327,372.78a5.83,5.83,0,1,1,5.84-5.82A6,6,0,0,1,327,372.78Z" transform="translate(-256.88 -166.95)" fill="#ec6e4c"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Torso" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -149,7 +167,7 @@
 							<path d="M449.12,286a5.82,5.82,0,0,1,.31-11.63,5.72,5.72,0,0,1,5.63,6A5.78,5.78,0,0,1,449.12,286Z" transform="translate(-256.98 -189.71)" fill="#ec6e4c"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Hands" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -163,7 +181,7 @@
 							<path d="M464.38,177.39a15.92,15.92,0,0,1-1.33,3.26,117.59,117.59,0,0,1-17,19.29,6,6,0,0,1-8.1-8.79,127.83,127.83,0,0,0,13.87-15.36c.55-.73,1.05-1.5,1.62-2.22a5.94,5.94,0,0,1,6.66-2A6.64,6.64,0,0,1,464.38,177.39Z" transform="translate(-316.4 -166.23)"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Legs" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -176,7 +194,7 @@
 							<path d="M336.33,298.71c-.12,2.94-.34,5.88-.32,8.82a19.88,19.88,0,0,0,1.73,8c2,4.54,5.61,7,10.41,7.85,1.06.19,2.14.28,3.18.53a5.79,5.79,0,0,1-1.47,11.42,28,28,0,0,1-12.2-3.48c-7.44-4.14-11.23-10.74-12.73-18.87a44.26,44.26,0,0,1,0-15.1,5.91,5.91,0,0,1,5.55-5.07,5.75,5.75,0,0,1,5.79,4.11,12.9,12.9,0,0,1,.28,1.76Z" transform="translate(-290.74 -167.62)" fill="#ec6e4c"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Ankles" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
@@ -192,24 +210,13 @@
 							<path d="M343.13,239.27a72.35,72.35,0,0,1-1.6,7.18,3.94,3.94,0,0,1-4.14,3,2.89,2.89,0,0,1-1.05-.21,17.53,17.53,0,0,1-7.7-5.87c-3.52-4.95-2.11-11.66,3.32-15.25a5.67,5.67,0,0,1,7,1,13.59,13.59,0,0,1,3.93,10.07Z" transform="translate(-326.71 -166.88)"/>
 						</svg>
 					</td>
-					<td class="tcenter vert-align">
+					<td class="vert-align">
 						<p ng-repeat="article in Routes[$index].clothing.Feet" class="articles">{{ article.name }}</p>
 					</td>
 				</tr>
-				<!-- <tr>
-					<td colspan="2 tright">
-						<div ng-click="RemoveRoute($index)" class="app-cta cancel b app-border-radius shadow">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.4 219.38">
-								<path d="M396.21,196.69A109.69,109.69,0,1,1,286.74,307,109.7,109.7,0,0,1,396.21,196.69Zm.34,117.84a14.14,14.14,0,0,0,.95,1.22L432.76,351c.45.45.89.92,1.37,1.35a6,6,0,0,0,9.11-1.32c1.55-2.55,1.12-5.38-1.22-7.71q-18-18-36-36c-.36-.36-.7-.74-1-1.09.12-.15.17-.22.22-.27l37-37a6,6,0,1,0-8.44-8.49l-31.23,31.23c-2,2-4,4.1-6.12,6.28-.47-.55-.75-.94-1.09-1.28l-33.9-33.91c-.88-.88-1.73-1.78-2.64-2.62a6,6,0,0,0-9.26,1.4c-1.42,2.47-.95,5.31,1.27,7.54l36.2,36.2c.3.3.59.62,1.08,1.13a16,16,0,0,0-1.37,1.09q-18,18-36.06,36a6,6,0,1,0,8.47,8.49q12.78-12.75,25.53-25.54C388.56,322.56,392.46,318.64,396.55,314.53Z" transform="translate(-286.74 -196.69)" fill="#ec6e4c"/>
-							</svg>
-							<span>
-								Remove Route
-							</span>
-						</div>
-					</td>
-				</tr> -->
+
 				<tr>
-					<td colspan="2" class="cancel-route">
+					<td colspan="2" class="remove-route">
 						<span ng-click="RemoveRoute($index)" class="app-cta cancel b app-border-radius shadow float-r">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.43 219.43">
 								<path d="M396.54,416.09a109.71,109.71,0,1,1,109.6-109.68A109.71,109.71,0,0,1,396.54,416.09Zm0-92.78L418.22,345q12.28,12.3,24.59,24.58a12,12,0,1,0,16.69-17.21Q437,329.85,414.56,307.38c-.32-.32-.62-.67-.87-.94.34-.4.57-.73.85-1q22.51-22.55,45-45.07a12,12,0,0,0-17-16.89Q424,262,405.5,280.54c-2.95,2.95-5.87,5.93-9,9.06a12.59,12.59,0,0,0-.84-1.08l-40-40c-1.84-1.83-3.64-3.71-5.52-5.49a12,12,0,0,0-16.45,17.44q22.46,22.49,44.94,44.94c.32.32.63.66,1,1.07l-1.06,1q-22.47,22.47-44.93,44.95a12,12,0,0,0,17,16.9q13.59-13.53,27.13-27.12C384,335.93,390.24,329.66,396.58,323.31Z" transform="translate(-286.71 -196.67)"/>
@@ -223,7 +230,7 @@
 			</table>
 		</div>
 	
-		<span ng-click="AddRoute()" class="app-cta confirm add-route b app-border-radius shadow" ng-if="forecast">
+		<span ng-click="AddRoute()" class="app-cta add-route b app-border-radius shadow" ng-if="forecast">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.41 219.41">
 				<path d="M378.45,138.69A109.71,109.71,0,1,1,268.69,248.23,109.72,109.72,0,0,1,378.45,138.69Zm12.06,121.58H443c4.35,0,8.71.05,13.07,0a12,12,0,0,0-.53-24H390.51V218.82q0-23.74,0-47.48a12,12,0,1,0-24,.11q0,31.65,0,63.3v1.54H321.87c-6.91,0-13.83,0-20.74,0a12,12,0,0,0,.29,24q31.83,0,63.66,0h1.45v33.36c0,10.59,0,21.18,0,31.77a12,12,0,0,0,24-.23q0-31.65,0-63.3Z" transform="translate(-268.69 -138.69)" fill="#484848"/>
 			</svg>
@@ -232,16 +239,11 @@
 			</span>
 		</span>
 
-		<div>
-			<span class="app-cta confirm shadow app-border-radius b" ng-click="TestWindow()">
-				<span>{{ scopedWidth }}</span>
-				<span>
-					Hello World
-				</span>
+		<!-- <div>
+			<span class="app-cta shadow app-border-radius b" ng-click="TestWindow()">
+				<span>{{ windowWidth }}</span>
 			</span>
-		</div>
-
-		<resize>asdf</resize>
+		</div> -->
 	</section>
 
 	

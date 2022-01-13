@@ -39,11 +39,9 @@
 #cyclecast-app {
 	margin: 0px 0px 0px 0px;
 	padding: 10px 10px 10px 10px;
+	min-width: 260px;
 }
 
-#cyclecast-app section {
-	width: 100%;
-}
 
 #cyclecast-app #app-title {
 	margin: 10px 0px 10px 0px;
@@ -53,6 +51,26 @@
 	height: 40px;
 }
 
+
+#cyclecast-app tabs {
+	/* border: 1px solid salmon; */
+	display: block;
+	margin: 10px 0px 0px 0px;
+}
+#cyclecast-app tabs span {
+	/* border: 1px solid blue; */
+	margin: 0px -3px 0px 0px;
+    padding: 4px 8px 4px 8px;
+    display: inline-block;
+    border-bottom: 2px solid #ffffff;
+    background-color: #f2f2f2;
+    color: #bbb;
+}
+#cyclecast-app tabs span.active {
+	background-color: #FFF;
+    border-bottom-color: #EC6E4C;
+    color: #484848;
+}
 
 #cyclecast-app .route {
 	/* border: 1px solid green; */
@@ -65,6 +83,10 @@
 	border-top: none;
 }
 
+#cyclecast-app .tr-content {
+	height: 60px;
+	text-align: left;
+}
 #cyclecast-app .route select {
 	margin: 2px 0px 0px 0px;
 	padding: 4px 15px 4px 4px;
@@ -80,9 +102,6 @@
 	padding: 4px 0px 2px 0px;
 }
 
-#cyclecast-app .tr-content {
-	height: 60px;
-}
 
 #cyclecast-app .td-index-col {
 	/* width: 70px; */
@@ -133,24 +152,21 @@
 }
 #cyclecast-app .app-cta span {
 	display: flex;
-	margin: 5px 0px 0px 25px;
+	margin: 0px 0px 0px 00px;
 	font-size: .8rem;
+	line-height: 22px;
+	float: left;
 }
 #cyclecast-app .app-cta svg {
-	margin: 3px 0px 0px 0px;
-	position: absolute;
+	margin: 3px 7px 0px 0px;
 	height: 16px;
+	float: left;
 	width: 16px;
 }
 #cyclecast-app .app-cta.add-route {
 	margin: 15px 0px 0px 0px;
 }
-#cyclecast-app .cancel-route .app-cta {
+#cyclecast-app .remove-route .app-cta {
 	margin: 15px 2px 4px 0px;
 }
 
-#cyclecast-app tabs {
-	border: 1px solid salmon;
-	display: block;
-	margin: -100px 0 0 0;
-}

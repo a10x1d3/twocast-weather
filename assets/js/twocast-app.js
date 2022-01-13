@@ -1,10 +1,18 @@
 var app = angular.module('temperature-app', [])
 
 .controller('temperatureCtrl', function($scope, $http, $window) {
+	$scope.windowWidth = $window.innerWidth;
 	$scope.Routes = [];
 	$scope.clothing = clothing;
 	$scope.onecallURL = api.fullRequestURL;
 	$scope.winWidth = 0;
+
+	$scope.currentTab = 'Routes';
+
+	$scope.setTab = function(tab)
+	{
+		$scope.currentTab = tab;
+	};
 
 	$scope.FetchData = function () {
 		console.log("fetchData() fired");
@@ -38,8 +46,8 @@ var app = angular.module('temperature-app', [])
 			hour.startShortDay = startTimeObj.toLocaleString("en-US", { weekday: "short" });
 
 			// 0900, 1000, 1100, etc.
-			hour.startHour = startTimeObj.getHours() + "00";
-			if ( hour.startHour.length == 3 )
+			hour.startHour = startTimeObj.getHours().toString();
+			if ( hour.startHour.length == 1 )
 			{
 				hour.startHour = '0' + hour.startHour;
 			}
@@ -53,8 +61,8 @@ var app = angular.module('temperature-app', [])
 			}
 
 			// Build text options for route's hour select
-			hour.longOptText = hour.startHour + '  |  ' + hour.startLongDay + ' ' + hour.startDay + ', ' + hour.startLongMonth;
-			hour.shortOptText = hour.startHour + '  |  ' + hour.startShortDay + ' ' + hour.startDay + ', ' + hour.startShortMonth;
+			hour.longOptText = hour.startHour + '00  |  ' + hour.startLongDay + ' ' + hour.startDay + ', ' + hour.startLongMonth;
+			hour.shortOptText = hour.startHour + ' on  ' + hour.startShortDay + ' ' + hour.startDay + ', ' + hour.startShortMonth;
 
 			hour.weatherIconURL = 'http://openweathermap.org/img/wn/' + hour.weather[0].icon + '@2x.png';
 			hour.temp = Math.floor(hour.temp);
@@ -103,48 +111,8 @@ var app = angular.module('temperature-app', [])
 		$scope.Routes.splice(RouteIndex, 1);
 	};
 
-	$scope.TestWindow = function()
-	{
-		// console.log($window);
-		$scope.scopedWidth = 10;
-	};
-
-	// $scope.scopedWidth = 0;
-
 	angular.element($window).bind('resize', function () {
-		$scope.scopedWidth = $window.innerWidth;
+		$scope.windowWidth = $window.innerWidth;
 		$scope.$digest();
-	});
-
-	// $scope.$watch($window.innerWidth, function() {
-	// 	console.log('innerWidth changed');
-	// });
-
-
-	
+	});	
 });
-
-app.directive('resize', ['$window', function ($window) {
-
-	return {
-		link: link,
-		restrict: 'E',
-		template: '<div>window size: {{width}}px</div>'
-	};
-
-	function link(scope, element, attrs) {
-
-		scope.width = $window.innerWidth;
-
-		angular.element($window).bind('resize', function () {
-
-			scope.width = $window.innerWidth;
-
-			// manuall $digest required as resize event
-			// is outside of angular
-			scope.$digest();
-		});
-
-	}
-
-}]);
