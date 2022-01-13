@@ -41,11 +41,11 @@
 			</span>
 		</nav>
 	
-	<tabs>
-		<span>Routes</span>
-		<span>Article Table</span>
-		<span>API Fields</span>
-	</tabs>
+		<!-- <tabs>
+			<span>Routes</span>
+			<span>Article Table</span>
+			<span>API Fields</span>
+		</tabs> -->
 
 		<div ng-repeat="route in Routes" class="route app-border-radius shadow">
 			<table>
@@ -230,8 +230,21 @@
 			<span>
 				Add Route
 			</span>
-		</span>	
+		</span>
+
+		<div>
+			<span class="app-cta confirm shadow app-border-radius b" ng-click="TestWindow()">
+				<span>{{ scopedWidth }}</span>
+				<span>
+					Hello World
+				</span>
+			</span>
+		</div>
+
+		<resize>asdf</resize>
 	</section>
+
+	
 
 </body>
 </html>

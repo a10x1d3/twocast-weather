@@ -1,10 +1,11 @@
 var app = angular.module('temperature-app', [])
 
-.controller('temperatureCtrl', function($scope, $http) {
+.controller('temperatureCtrl', function($scope, $http, $window) {
 	$scope.Routes = [];
 	$scope.clothing = clothing;
 	$scope.onecallURL = api.fullRequestURL;
-	
+	$scope.winWidth = 0;
+
 	$scope.FetchData = function () {
 		console.log("fetchData() fired");
 		$http.get($scope.onecallURL)
@@ -101,4 +102,49 @@ var app = angular.module('temperature-app', [])
 	{
 		$scope.Routes.splice(RouteIndex, 1);
 	};
+
+	$scope.TestWindow = function()
+	{
+		// console.log($window);
+		$scope.scopedWidth = 10;
+	};
+
+	// $scope.scopedWidth = 0;
+
+	angular.element($window).bind('resize', function () {
+		$scope.scopedWidth = $window.innerWidth;
+		$scope.$digest();
+	});
+
+	// $scope.$watch($window.innerWidth, function() {
+	// 	console.log('innerWidth changed');
+	// });
+
+
+	
 });
+
+app.directive('resize', ['$window', function ($window) {
+
+	return {
+		link: link,
+		restrict: 'E',
+		template: '<div>window size: {{width}}px</div>'
+	};
+
+	function link(scope, element, attrs) {
+
+		scope.width = $window.innerWidth;
+
+		angular.element($window).bind('resize', function () {
+
+			scope.width = $window.innerWidth;
+
+			// manuall $digest required as resize event
+			// is outside of angular
+			scope.$digest();
+		});
+
+	}
+
+}]);
