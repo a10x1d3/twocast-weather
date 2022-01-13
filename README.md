@@ -1,2 +1,2 @@
 # twocast-weather
-Cold weather forecasting for cold weather cyclists
+Cold weather clothing planning for cold weather cyclists
