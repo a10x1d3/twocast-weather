@@ -241,7 +241,7 @@
 		<p ng-if="!forecast" 
 		   ng-show="ui.activeTab == 'Routes'"
 		   id="no-forecast-data"
-		   class="font-p8rem b tcenter">No forecast data (fetch API data)
+		   class="font-p8rem b tcenter">(No forecast: fetch API data)
 		</p>
 
 		<span ng-click="AddRoute()"
@@ -257,26 +257,36 @@
 		</span>
 
 		<div ng-show="ui.activeTab == 'Clothing'"
-		     id="clothing"
-		     class="tab-content app-border-radius shadow">
-			
-			 <p class="b title">Clothing Table</p>
-			
-			 <table>
-			 	<tr ng-repeat="eachCategory in clothing" ng-class="{'no-border': $index == 0}" class="tr-content">
+			id="clothing"
+			class="tab-content app-border-radius shadow">
+		
+			<p class="b title">Clothing Table</p>
+			<!-- <ul>
+				<li ng-repeat="eachCat in clothing">
+					<ul>
+						<li ng-repeat="eachArticle in eachCat.clothing">{{eachArticle}}</li>
+					</ul>
+				</li>
+			</ul> -->
+			<table>
+				<tr>
+					<td>Category</td>
+					<td colspan="3">Col B</td>
+				</tr>
+
+				<tr ng-repeat="eachCategory in clothing">
+					<td>{{ eachCategory.categoryName }}</td>
 					<td>
-						{{eachCategory.categoryName}}
-					</td>
-					<td>
-						<table>
-							<tr ng-repeat="eachArticle in eachCategory.clothing">
-								<td>{{ eachArticle.name }}</td>
-								<td>{{ eachArticle.min }}</td>
-								<td>{{ eachArticle.max }}</td>
+						<tbody ng-repeat="eachArticle in eachCategory.clothing">
+							<tr>
+								<td>
+									1{{ eachArticle }}
+								</td>
 							</tr>
-						</table>
+						</tbody>
 					</td>
 				</tr>
+
 			</table>
 		</div>
 

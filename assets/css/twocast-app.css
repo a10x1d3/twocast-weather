@@ -1,5 +1,5 @@
 /* General App Styles */
-#cyclecast-app td:nth-child(2) { width: 99% }
+#cyclecast-app td:last-child { width: 99% }
 
 /* General App Classes */
 #cyclecast-app .app-border-radius { border-radius: 4px; }
