@@ -1,7 +1,8 @@
 var clothing = 
 [
     {
-        "categoryName": "Head",
+        "name": "Head",
+        "svgPath": "./assets/images/app-icons/body-head.svg",
         "clothing":
         [
             {
@@ -22,7 +23,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Neck",
+        "name": "Neck",
+        "svgPath": "./assets/images/app-icons/body-neck.svg",
         "clothing":
         [
             {
@@ -33,7 +35,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Torso",
+        "name": "Torso",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
         "clothing":
         [
             {
@@ -64,7 +67,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Hands",
+        "name": "Hands",
+        "svgPath": "./assets/images/app-icons/body-hands.svg",
         "clothing":
         [
             {
@@ -85,7 +89,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Legs",
+        "name": "Legs",
+        "svgPath": "./assets/images/app-icons/body-legs.svg",
         "clothing":
         [
             {
@@ -106,7 +111,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Ankles",
+        "name": "Ankles",
+        "svgPath": "./assets/images/app-icons/body-ankles.svg",
         "clothing":
         [
             {
@@ -127,7 +133,8 @@ var clothing =
         ]
     },
     {
-        "categoryName": "Feet",
+        "name": "Feet",
+        "svgPath": "./assets/images/app-icons/body-feet.svg",
         "clothing":
         [
             {

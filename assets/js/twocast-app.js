@@ -6,9 +6,10 @@ var app = angular.module('temperature-app', [])
 	$scope.clothing = clothing;
 	$scope.onecallURL = api.fullRequestURL;
 	$scope.winWidth = 0;
+	
 
 	$scope.ui = {
-		activeTab: 'Clothing',
+		activeTab: 'Routes',
 		tabs : [
 			{
 				title: "Routes"
@@ -31,13 +32,15 @@ var app = angular.module('temperature-app', [])
 
 	$scope.FetchData = function () {
 		console.log("fetchData() fired");
-		$http.get($scope.onecallURL)
-			.success(function (response)
-				{
-					$scope.forecast = response;
-					$scope.parseForecast();
-				}
-			);
+		$scope.forecast = hourlyForecast;
+		$scope.parseForecast();
+		// $http.get($scope.onecallURL)
+		// 	.success(function (response)
+		// 		{
+		// 			$scope.forecast = response;
+		// 			$scope.parseForecast();
+		// 		}
+		// 	);
 	};
 	
     $scope.parseForecast = function () {
@@ -110,15 +113,16 @@ var app = angular.module('temperature-app', [])
 		feelsLike = $scope.Routes[RouteIndex].data.feels_like;
 		$scope.clothing.forEach(category => {
 			
-			$scope.Routes[RouteIndex].clothing[category.categoryName] = [];
+			$scope.Routes[RouteIndex].clothing[category.name] = [];
 			category.clothing.forEach(clothingArticle => {
 				if ( clothingArticle.min <= feelsLike && clothingArticle.max >= feelsLike)
 				{
-					$scope.Routes[RouteIndex].clothing[category.categoryName].push(clothingArticle)
+					$scope.Routes[RouteIndex].clothing[category.name].push(clothingArticle)
 				}
 			});
 
 		});
+		console.log($scope.Routes[RouteIndex].clothing)
 	};
 
 	$scope.RemoveRoute = function(RouteIndex)
