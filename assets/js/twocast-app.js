@@ -6,6 +6,9 @@ var app = angular.module('temperature-app', [])
 	$scope.clothing = clothing;
 	$scope.onecallURL = api.fullRequestURL;
 	$scope.winWidth = 0;
+	$scope.testing = {
+		model: null
+	};
 	
 
 	$scope.ui = {
