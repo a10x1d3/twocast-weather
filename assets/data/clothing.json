@@ -2,7 +2,8 @@ var clothing =
 [
     {
         "name": "Head",
-        "svgPath": "./assets/images/app-icons/body-head.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "width",
         "clothing":
         [
             {
@@ -24,7 +25,8 @@ var clothing =
     },
     {
         "name": "Neck",
-        "svgPath": "./assets/images/app-icons/body-neck.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "width",
         "clothing":
         [
             {
@@ -37,6 +39,7 @@ var clothing =
     {
         "name": "Torso",
         "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "width",
         "clothing":
         [
             {
@@ -68,7 +71,8 @@ var clothing =
     },
     {
         "name": "Hands",
-        "svgPath": "./assets/images/app-icons/body-hands.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "height",
         "clothing":
         [
             {
@@ -90,7 +94,8 @@ var clothing =
     },
     {
         "name": "Legs",
-        "svgPath": "./assets/images/app-icons/body-legs.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "height",
         "clothing":
         [
             {
@@ -112,7 +117,8 @@ var clothing =
     },
     {
         "name": "Ankles",
-        "svgPath": "./assets/images/app-icons/body-ankles.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "height",
         "clothing":
         [
             {
@@ -134,7 +140,8 @@ var clothing =
     },
     {
         "name": "Feet",
-        "svgPath": "./assets/images/app-icons/body-feet.svg",
+        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "sizeBy": "height",
         "clothing":
         [
             {

@@ -4,11 +4,18 @@
 /* General App Classes */
 #cyclecast-app .app-border-radius { border-radius: 4px; }
 #cyclecast-app .app-float-right { float: right; }
-#cyclecast-app .vert-align { vertical-align: middle; }
+#cyclecast-app .valign-t { vertical-align: top; }
+#cyclecast-app .valign-m { vertical-align: middle; }
+#cyclecast-app .valign-b { vertical-align: bottom; }
+#cyclecast-app .talign-l { text-align: left; }
+#cyclecast-app .talign-m { text-align: middle; }
+#cyclecast-app .talign-r { text-align: right; }
 #cyclecast-app .tcenter { text-align: center; }
 #cyclecast-app .float-r { float: right; }
 #cyclecast-app .float-l { float: left; }
 #cyclecast-app .shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); }
+#cyclecast-app .cursor { cursor: pointer; }
+#cyclecast-app .link { color: #EC6E4C; }
 #cyclecast-app .no-border { border: none !important; }
 #cyclecast-app .font-p7rem { font-size: .7rem; }
 #cyclecast-app .font-p8rem { font-size: .8rem; }
@@ -46,19 +53,40 @@
 
 #cyclecast-app {
 	margin: 0px 0px 0px 0px;
-	padding: 10px 10px 15px 10px;
+	padding: 10px 10px 10px 10px;
 	min-width: 260px;
 }
 
 
 #cyclecast-app #app-title {
 	margin: 10px 0px 10px 0px;
+	font-size: 1rem;
 }
 #cyclecast-app nav {
 	display: block;
 	height: 40px;
 }
-
+#cyclecast-app #themer {
+	border: 2px solid blue;
+	position: relative;
+	float: right;
+	/* width: 200px; */
+	font-size: .8rem;
+}
+#cyclecast-app #themer .theme {
+	border: 1px solid red;
+	float: left;
+	line-height: 20px;
+	height: 20px;
+	width: 48px;
+}
+#cyclecast-app #themer #slider {
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	margin: 0px 0px 0px 0px;
+	background-color: red;
+}
 
 #cyclecast-app tabs {
 	/* border: 1px solid salmon; */
@@ -75,7 +103,6 @@
     color: #BBBBBB;
 	cursor: pointer;
 	font-size: .8rem;
-
 }
 #cyclecast-app tabs span.active {
 	background-color: #FFF;
@@ -83,101 +110,102 @@
     color: #484848;
 }
 
-/* #cyclecast-app .route { */
-#cyclecast-app .tab-content {
-	/* border: 1px solid green; */
+
+#cyclecast-app .tab-body {
+	/* border: 1px solid blue; */
 	margin: 15px 0px 0px 0px;
-	padding: 10px;
-	/* max-width: 400px; */
+	padding: 6px 6px 6px 6px;
+	background-color: #FFFFFF;
 }
 
 
 
-#cyclecast-app .tab-content select {
-	margin: 2px 0px 0px 0px;
-	padding: 4px 15px 4px 4px;
+#cyclecast-app ul {
+	display: block;
+}
+#cyclecast-app .ul-content li {
+	/* border: 1px solid salmon; */
+	float: left;
+}
+#cyclecast-app .ul-content li.right {
+	float: right;
 }
 
 #cyclecast-app .route-id {
+	font-size: .9rem;
 	color: #EC6E4C;
-	font-size: 18px;
 }
 
-
-#cyclecast-app tr.forecast td {
-	/* border: 1px solid salmon; */
-	padding: 4px 0px 2px 0px;
+#cyclecast-app select {
+	padding: 3px 8px 3px 8px;
+	border: 2px solid #F2F2F2;
+	color: #A6A6A6;
+	font-size: .8rem;
 }
 
-
-#cyclecast-app .td-index-col {
-	/* width: 70px; */
-	vertical-align: middle;
-	white-space: nowrap;
-}
-
-#cyclecast-app .td-content-col {
-	/* width: 260px; */
-	width: 99%;
+#cyclecast-app .forecast-data {
+	margin: 0px 0px 0px 8px;
+	line-height: 45px;
+	font-size: .9rem;
 }
 
 #cyclecast-app .route-desc {
-	margin: 5px 0px -3px 0px;
-	padding: 3px 0px 3px 5px;
+	margin: 3px 0px 2px 0px;
+	padding: 4px 3px 4px 5px;
+	font-size: .85rem;
 }
+
 
 #cyclecast-app .weather-icon {
 	height: 45px;
 	width: 45px;
 }
 
-#cyclecast-app .weather-icon img {
-	height: 50px;
+
+#cyclecast-app tr {
+	border-top: .5px solid #F2F2F2
+}
+#cyclecast-app tr:first-child {
+	border-top: none;	
+}
+#cyclecast-app .title {
+	padding: 6px 6px 2px 6px;
+}
+#cyclecast-app .title.center {
+	text-align: center;
+}
+#cyclecast-app .title.right {
+	text-align: right;
+}
+#cyclecast-app .article-icon {
+	border: 0;
+	/* border-top: 1px solid red; */
+	border-bottom: none;
+	padding: 6px 0px 6px 0px;
+}
+#cyclecast-app .article-icon img{
+	height: 40px;
 	width: 50px;
 }
 
-#cyclecast-app .app-icon-svg.set-height {
-	height: 35px;
+#cyclecast-app .article-name {
+	border: 0;
+	/* border-top: 1px solid red; */
+	border-bottom: none;
+	padding: 6px 0 6px 6px;
 }
 
-#cyclecast-app .app-icon-svg.set-width {
-	width: 35px;
-}
-#cyclecast-app #no-forecast-data {
+#cyclecast-app .add-route {
 	margin: 15px 0px 0px 0px;
-	color: #BBBBBB;
-}
-
-#cyclecast-app .articles {
-	margin: 8px 0px 8px 15px;
-}
-
-#cyclecast-app #clothing .title {
-	margin: 5px 0 0 1px;
-	color: #EC6E4C;
-	font-size: 18px;
-}
-#cyclecast-app #clothing table {
-	margin: 10px 0px 0px 0px;
-}
-
-#cyclecast-app #clothing td.category
-{
-	color: #5C5C5C;
-	text-align: right;
-}
-
-#cyclecast-app #clothing .degree-range
-{
-	padding: 0px 0px 0px 6px;
-	color: #CCCCCC;
 }
 
 
+#cyclecast-app .app-cta-box {
+	margin: 15px 0px 0px 0px;
+}
 #cyclecast-app .app-cta {
 	padding: 5px 10px 5px 10px;
 	height: 22px;
-	cursor: pointer;
 	position: relative;
 	display: inline-block;
 }
@@ -188,16 +216,28 @@
 	line-height: 22px;
 	float: left;
 }
+#cyclecast-app .app-cta.inline {
+	height: 7px;
+	background: none;
+}
+#cyclecast-app .app-cta.inline span {
+	font-size: .8rem;
+	line-height: 8px;
+}
 #cyclecast-app .app-cta svg {
 	margin: 3px 7px 0px 0px;
 	height: 16px;
 	float: left;
 	width: 16px;
+	fill: #484848;
 }
-#cyclecast-app .app-cta.add-route {
-	margin: 15px 0px 0px 0px;
-}
-#cyclecast-app .remove-route .app-cta {
-	margin: 15px 2px 4px 0px;
+#cyclecast-app .app-cta.cancel  {
+	fill: pink;
 }
 
+#cyclecast-app #fetch-api {
+	font-size: .8rem;
+}
+/* #cyclecast-app .app-cta svg fill {
+
+} */
