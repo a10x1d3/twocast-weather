@@ -13,24 +13,29 @@ var app = angular.module('temperature-app', [])
 
 	$scope.ui = {
 		activeTab: 'Routes',
+		activeTheme: 'light',
 		tabs : [
-			{
-				title: "Routes"
-			},
-			{
-				title: "Clothing"
-			},
-			{
-				title: "API"
-			}
+			{ title: 'Routes' },
+			{ title: 'Clothing' },
+			{ title: 'API Data' }
+		],
+		themes: [
+			{ title: 'light' },
+			{ title: 'dark' }
 		]
 	};
 
-	$scope.setActiveTab = function(tabTitle)
+	$scope.setTabTo = function(tab)
 	{
-		$scope.ui.activeTab = tabTitle;
+		$scope.ui.activeTab = tab;
 		console.log("Setting tab: " + tabTitle + " as active");
 		console.log($scope.ui.activeTab);
+	};
+
+	$scope.setThemeTo = function(theme)
+	{
+		console.log("setting them to: " + theme);
+		$scope.ui.activeTheme = theme;
 	};
 
 	$scope.FetchData = function () {

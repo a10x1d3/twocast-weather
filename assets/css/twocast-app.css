@@ -1,47 +1,52 @@
-/* General App Styles */
+/* General App Style Settings */
 #cyclecast-app td:last-child { width: 99% }
+#cyclecast-app { font-size: .8rem; }
 
-/* General App Classes */
+/* General App Utility Classes */
 #cyclecast-app .app-border-radius { border-radius: 4px; }
 #cyclecast-app .app-float-right { float: right; }
 #cyclecast-app .valign-t { vertical-align: top; }
 #cyclecast-app .valign-m { vertical-align: middle; }
 #cyclecast-app .valign-b { vertical-align: bottom; }
-#cyclecast-app .talign-l { text-align: left; }
-#cyclecast-app .talign-m { text-align: middle; }
-#cyclecast-app .talign-r { text-align: right; }
-#cyclecast-app .tcenter { text-align: center; }
-#cyclecast-app .float-r { float: right; }
+#cyclecast-app .float-r { float: right !important; }
 #cyclecast-app .float-l { float: left; }
 #cyclecast-app .shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); }
 #cyclecast-app .cursor { cursor: pointer; }
 #cyclecast-app .link { color: #EC6E4C; }
 #cyclecast-app .no-border { border: none !important; }
-#cyclecast-app .font-p7rem { font-size: .7rem; }
-#cyclecast-app .font-p8rem { font-size: .8rem; }
 #cyclecast-app .font-p9rem { font-size: .9rem; }
+#cyclecast-app .font-p8rem { font-size: .8rem; }
+#cyclecast-app .font-p7rem { font-size: .7rem; }
 
-/* General: App Light-Scheme Colors */
-#cyclecast-app.light-scheme { background-color: #EEEEEE; }
-#cyclecast-app.light-scheme .tab-content { background-color: #FFFFFF;}
-#cyclecast-app.light-scheme .tab-content select { border: 1px solid #F2F2F2; color: #A6A6A6; }
-#cyclecast-app.light-scheme .route-desc { background-color: #F2F2F2; color: #A6A6A6}
-#cyclecast-app.light-scheme .weather-icon { border: 1px solid #F2F2F2; background-color: #FFFFFF; }
-#cyclecast-app.light-scheme .app-cta { background-color: #FFFFFF; color: #484848; }
-#cyclecast-app.light-scheme .tr-title { color: #484848;}
-#cyclecast-app.light-scheme .tr-content { border-top: 1px solid #F2F2F2; color: #5C5C5C;}
+/* General: App Light-Theme Colors */
+#cyclecast-app.light-theme { background-color: #EEEEEE; }
+#cyclecast-app.light-theme tabs span { border-bottom: 2px solid #FFFFFF; background-color: #E7E7E7; color: #BBBBBB; }
+#cyclecast-app.light-theme tabs span.active { background-color: #FFF; color: #484848; border-bottom-color: #EC6E4C; }
+#cyclecast-app.light-theme .tab-body { background-color: #FFFFFF; color: #5C5C5C; }
+#cyclecast-app.light-theme .tab-body select { border: 1px solid #F2F2F2; color: #A6A6A6; }
+#cyclecast-app.light-theme tr { border-top: .5px solid #F2F2F2; }
+#cyclecast-app.light-theme .route-desc { background-color: #F2F2F2; color: #A6A6A6}
+#cyclecast-app.light-theme .weather-icon { border: 1px solid #F2F2F2; background-color: #FFFFFF; }
+#cyclecast-app.light-theme .app-cta { background-color: #FFFFFF; color: #484848; }
 
-/* General: App Light-Scheme Colors */
-#cyclecast-app.dark-scheme { background-color: #343434; }
-#cyclecast-app.dark-scheme .tab-content { background-color: #484848; }
-#cyclecast-app.dark-scheme #app-title { color: #F2F2F2; }
-#cyclecast-app.dark-scheme .tab-content select { border: 1px solid #5C5C5C; background-color: #484848; color: #F2F2F2; }
-#cyclecast-app.dark-scheme .tr-title { color: #F2F2F2; }
-#cyclecast-app.dark-scheme .weather-icon { border: 1px solid #A6A6A6; background-color: #FFF; }
-#cyclecast-app.dark-scheme .route-desc { background-color: #A6A6A6; color: #484848 }
-#cyclecast-app.dark-scheme .tr-content { border-top: 1px solid #5C5C5C; color: #F2F2F2; }
-#cyclecast-app.dark-scheme .app-cta { border: 1px solid #5C5C5C; background-color: #484848; color: #F2F2F2; }
-#cyclecast-app.dark-scheme .app-cta svg path { fill: #F2F2F2; }
+/* General: App Light-Theme Colors */
+#cyclecast-app.dark-theme { background-color: #343434; }
+#cyclecast-app.dark-theme #themer { border: 1px solid #5C5C5C; }
+#cyclecast-app.dark-theme #themer #slider { background-color: #5C5C5C; }
+#cyclecast-app.dark-theme #themer .theme { color: #F2F2F2; }
+#cyclecast-app.dark-theme tabs span { background-color: #484848; color: #BBBBBB; border-bottom: 2px solid #A6A6A6;   }
+#cyclecast-app.dark-theme tabs span.active { background-color: #343434; color: #F2F2F2; border-bottom-color: #EC6E4C; }
+#cyclecast-app.dark-theme #app-title { color: #F2F2F2; }
+#cyclecast-app.dark-theme .ul-content { color: #F2F2F2; }
+#cyclecast-app.dark-theme .tab-body { background-color: #484848; }
+#cyclecast-app.dark-theme .tab-body select { border: 1px solid #5C5C5C; background-color: #484848; color: #A6A6A6; }
+#cyclecast-app.dark-theme tr { border-top: .5px solid #5C5C5C; }
+#cyclecast-app.dark-theme .weather-icon { border: 1px solid #A6A6A6; background-color: #FFF; }
+#cyclecast-app.dark-theme .route-desc { background-color: #5C5C5C; color: #BBBBBB }
+#cyclecast-app.dark-theme .title { color: #F2F2F2; }
+#cyclecast-app.dark-theme .article { color: #F2F2F2; }
+#cyclecast-app.dark-theme .app-cta { border: 1px solid #5C5C5C; background-color: #484848; color: #F2F2F2; }
+#cyclecast-app.dark-theme .app-cta svg path { fill: #F2F2F2; }
 
 /* General: App Standard Colors */
 #cyclecast-app .app-orange-text {	color: #EC6E4C; }
@@ -56,8 +61,6 @@
 	padding: 10px 10px 10px 10px;
 	min-width: 260px;
 }
-
-
 #cyclecast-app #app-title {
 	margin: 10px 0px 10px 0px;
 	font-size: 1rem;
@@ -66,178 +69,127 @@
 	display: block;
 	height: 40px;
 }
+
+/*\
+|*| Theme Slider UI
+\*/
 #cyclecast-app #themer {
-	border: 2px solid blue;
+	border: 1px solid #FFF;
+	margin: 4px 0px 0px 0px;
+	padding: 2px 2px 2px 2px;
 	position: relative;
-	float: right;
-	/* width: 200px; */
-	font-size: .8rem;
+	height: 19.5px;
+	/* width: 120px; */
 }
 #cyclecast-app #themer .theme {
-	border: 1px solid red;
+	/* border: 1px solid red; */
+	position: relative;
 	float: left;
-	line-height: 20px;
 	height: 20px;
-	width: 48px;
+	width: 50px;
+	line-height: 21px;
+	cursor: pointer;
 }
 #cyclecast-app #themer #slider {
-	height: 10px;
-	width: 10px;
+	/* border: 1px solid gold; */
 	position: absolute;
+	height: 20px;
+	width: 50px;
+	background: #FFF;
+	border-radius: 2px;
+}
+#cyclecast-app #themer.light #slider {
 	margin: 0px 0px 0px 0px;
-	background-color: red;
+}
+#cyclecast-app #themer.dark #slider {
+	margin: 0px 0px 0px 51px;
 }
 
 #cyclecast-app tabs {
-	/* border: 1px solid salmon; */
 	display: block;
 	margin: 10px 0px 0px 0px;
 }
+
 #cyclecast-app tabs span {
-	/* border: 1px solid blue; */
 	margin: 0px 2px 0px 0px;
     padding: 10px 8px 7px 8px;
     display: inline-block;
-    border-bottom: 2px solid #FFFFFF;
-    background-color: #E7E7E7;
-    color: #BBBBBB;
 	cursor: pointer;
 	font-size: .8rem;
 }
-#cyclecast-app tabs span.active {
-	background-color: #FFF;
-    border-bottom-color: #EC6E4C;
-    color: #484848;
-}
-
 
 #cyclecast-app .tab-body {
-	/* border: 1px solid blue; */
 	margin: 15px 0px 0px 0px;
 	padding: 6px 6px 6px 6px;
-	background-color: #FFFFFF;
 }
 
-
-
-#cyclecast-app ul {
+#cyclecast-app .ul-content {
 	display: block;
 }
 #cyclecast-app .ul-content li {
-	/* border: 1px solid salmon; */
 	float: left;
 }
-#cyclecast-app .ul-content li.right {
-	float: right;
-}
-
-#cyclecast-app .route-id {
-	font-size: .9rem;
-	color: #EC6E4C;
-}
-
 #cyclecast-app select {
 	padding: 3px 8px 3px 8px;
 	border: 2px solid #F2F2F2;
-	color: #A6A6A6;
-	font-size: .8rem;
 }
-
 #cyclecast-app .forecast-data {
 	margin: 0px 0px 0px 8px;
 	line-height: 45px;
-	font-size: .9rem;
 }
-
 #cyclecast-app .route-desc {
 	margin: 3px 0px 2px 0px;
 	padding: 4px 3px 4px 5px;
-	font-size: .85rem;
 }
-
-
 #cyclecast-app .weather-icon {
 	height: 45px;
 	width: 45px;
 }
 
 
-#cyclecast-app tr {
-	border-top: .5px solid #F2F2F2
-}
 #cyclecast-app tr:first-child {
 	border-top: none;	
 }
 #cyclecast-app .title {
-	padding: 6px 6px 2px 6px;
+	padding: 6px 6px 2px 12px;
 }
-#cyclecast-app .title.center {
-	text-align: center;
-}
-#cyclecast-app .title.right {
-	text-align: right;
+#cyclecast-app .article {
+	padding: 6px 0 6px 12px;
 }
 #cyclecast-app .article-icon {
-	border: 0;
-	/* border-top: 1px solid red; */
-	border-bottom: none;
 	padding: 6px 0px 6px 0px;
 }
 #cyclecast-app .article-icon img{
 	height: 40px;
 	width: 50px;
 }
-
-#cyclecast-app .article-name {
-	border: 0;
-	/* border-top: 1px solid red; */
-	border-bottom: none;
-	padding: 6px 0 6px 6px;
-}
-
-#cyclecast-app .add-route {
-	margin: 15px 0px 0px 0px;
-}
-
-
 #cyclecast-app .app-cta-box {
 	margin: 15px 0px 0px 0px;
 }
 #cyclecast-app .app-cta {
-	padding: 5px 10px 5px 10px;
-	height: 22px;
+	padding: 5px 10px 5px 8px;
+	height: 17px;
 	position: relative;
 	display: inline-block;
 }
 #cyclecast-app .app-cta span {
 	display: flex;
 	margin: 0px 0px 0px 00px;
-	font-size: .8rem;
-	line-height: 22px;
+	line-height: 17px;
 	float: left;
 }
-#cyclecast-app .app-cta.inline {
-	height: 7px;
-	background: none;
-}
-#cyclecast-app .app-cta.inline span {
-	font-size: .8rem;
-	line-height: 8px;
-}
 #cyclecast-app .app-cta svg {
-	margin: 3px 7px 0px 0px;
-	height: 16px;
+	margin: 1px 6px 0px 0px;
+	height: 14px;
 	float: left;
 	width: 16px;
 	fill: #484848;
 }
-#cyclecast-app .app-cta.cancel  {
-	fill: pink;
+#cyclecast-app .app-cta.inline {
+	height: 7px;
+	background: none;
+	border: none;
 }
-
-#cyclecast-app #fetch-api {
-	font-size: .8rem;
+#cyclecast-app .app-cta.inline span {
+	line-height: 8px;
 }
-/* #cyclecast-app .app-cta svg fill {
-
-} */
