@@ -15,7 +15,7 @@ var app = angular.module('twocast-weather', [])
 		cnt: '96'
 	}
 	$scope.ui = {
-		activeTab: 'API Fields',
+		activeTab: 'Routes',
 		activeTheme: 'light',
 		tabs: [
 			{ title: 'Routes' },
