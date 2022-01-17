@@ -9,17 +9,20 @@ var clothing =
             {
                 "name": "Cycling Cap",
                 "min": "45",
-                "max": "120"
+                "max": "110",
+                "rainArticle": false
             },
             {
                 "name": "Wool Cap",
-                "min": "-20",
-                "max": "45"  
+                "min": "0",
+                "max": "45",
+                "rainArticle": false
             },
             {
                 "name": "Helmet Cover",
-                "min": "-20",
-                "max": "34"
+                "min": "0",
+                "max": "34",
+                "rainArticle": true
             }
         ]
     },
@@ -31,8 +34,9 @@ var clothing =
         [
             {
                 "name": "Neck Buff",
-                "min": "-20",
-                "max": "40"
+                "min": "0",
+                "max": "40",
+                "rainArticle": false
             }
         ]
     },
@@ -43,29 +47,34 @@ var clothing =
         "clothing":
         [
             {
-                "name": "T-Shirt (Or less)",
+                "name": "T-Shirt",
                 "min": "55",
-                "max": "120"
+                "max": "110",
+                "rainArticle": false
             },
             {
                 "name": "Beefy-T",
-                "min": "-20",
-                "max": "54"
+                "min": "0",
+                "max": "54",
+                "rainArticle": false
             },
             {
                 "name": "Under Armour",
-                "min": "-20",
-                "max": "45"
+                "min": "0",
+                "max": "45",
+                "rainArticle": false
             },
             {
                 "name": "Light Jacket",
                 "min": "39", 
-                "max": "49"
+                "max": "49",
+                "rainArticle": true
             },
             {
                 "name": "Heavy Jacket",
-                "min": "-20",
-                "max": "38"
+                "min": "0",
+                "max": "38",
+                "rainArticle": false
             }
         ]
     },
@@ -78,17 +87,20 @@ var clothing =
             {
                 "name": "Fingerless Gloves",
                 "min": "45",
-                "max": "120"
+                "max": "110",
+                "rainArticle": false
             },
             {
-                "name": "LongFinger Gloves",
-                "min": "-120",
-                "max": "44"
+                "name": "Finger Gloves",
+                "min": "0",
+                "max": "44",
+                "rainArticle": false
             },
             {
                 "name": "Bar Mitts",
-                "min": "-120",
-                "max": "24"
+                "min": "0",
+                "max": "24",
+                "rainArticle": false
             }
         ]
     },
@@ -101,17 +113,20 @@ var clothing =
             {
                 "name": "Shorts",
                 "min": "50",
-                "max": "120"
+                "max": "110",
+                "rainArticle": true
             },
             {
                 "name": "Light Tights",
                 "min": "35",
-                "max": "49"
+                "max": "49",
+                "rainArticle": false
             },
             {
                 "name": "Heavy Tights",
-                "min": "-120",
-                "max": "34"
+                "min": "0",
+                "max": "34",
+                "rainArticle": false
             }
         ]
     },
@@ -122,19 +137,22 @@ var clothing =
         "clothing":
         [
             {
-                "name": "No-Show Socks",
+                "name": "Ankle Socks",
                 "min": "45",
-                "max": "120"
+                "max": "110",
+                "rainArticle": false
             },
             {
                 "name": "Long Socks",
                 "min": "24",
-                "max": "44"
+                "max": "44",
+                "rainArticle": false
             },
             {
                 "name": "Wool Socks",
-                "min": "-20",
-                "max": "23"
+                "min": "0",
+                "max": "23",
+                "rainArticle": false
             }
         ]
     },
@@ -146,8 +164,9 @@ var clothing =
         [
             {
                 "name": "Overshoes",
-                "min": "-20",
-                "max": "32"
+                "min": "0",
+                "max": "32",
+                "rainArticle": true
             }
         ]
     }

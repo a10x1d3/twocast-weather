@@ -1,23 +1,26 @@
-var app = angular.module('temperature-app', [])
+var app = angular.module('twocast-weather', [])
 
-.controller('temperatureCtrl', function($scope, $http, $window) {
+	.controller('twoCastWeatherCtrl', function($scope, $http, $window) {
 	$scope.windowWidth = $window.innerWidth;
 	$scope.Routes = [];
 	$scope.clothing = clothing;
-	$scope.onecallURL = api.fullRequestURL;
-	$scope.winWidth = 0;
-	$scope.testing = {
-		model: null
-	};
-	
-
+	$scope.api = {
+		key: '',
+		baseURL: 'https://api.openweathermap.org/data/2.5/',
+		callType: 'onecall',
+		lat: '39.24',
+		long: '-76.83',
+		exclude: 'daily,minutely',
+		units: 'imperial',
+		cnt: '96'
+	}
 	$scope.ui = {
-		activeTab: 'Routes',
+		activeTab: 'API Fields',
 		activeTheme: 'light',
-		tabs : [
+		tabs: [
 			{ title: 'Routes' },
 			{ title: 'Clothing' },
-			{ title: 'API Data' }
+			{ title: 'API Fields' }
 		],
 		themes: [
 			{ title: 'light' },
@@ -28,27 +31,22 @@ var app = angular.module('temperature-app', [])
 	$scope.setTabTo = function(tab)
 	{
 		$scope.ui.activeTab = tab;
-		console.log("Setting tab: " + tabTitle + " as active");
-		console.log($scope.ui.activeTab);
 	};
 
 	$scope.setThemeTo = function(theme)
-	{
-		console.log("setting them to: " + theme);
+	{ 
 		$scope.ui.activeTheme = theme;
 	};
 
 	$scope.FetchData = function () {
-		console.log("fetchData() fired");
-		$scope.forecast = hourlyForecast;
-		$scope.parseForecast();
-		// $http.get($scope.onecallURL)
-		// 	.success(function (response)
-		// 		{
-		// 			$scope.forecast = response;
-		// 			$scope.parseForecast();
-		// 		}
-		// 	);
+		$scope.fullURL = `${$scope.api.baseURL + $scope.api.callType}?lat=${$scope.api.lat}&lon=${$scope.api.long}&exclude=${$scope.api.exclude}&appid=${$scope.api.key}&units=${$scope.api.units}&cnt=${$scope.api.cnt}`;
+		$http.get($scope.fullURL)
+			.success(function (response)
+				{
+					$scope.forecast = response;
+					$scope.parseForecast();
+				}
+			);
 	};
 	
     $scope.parseForecast = function () {
@@ -89,7 +87,6 @@ var app = angular.module('temperature-app', [])
 			// Build text options for route's hour select
 			hour.longOptText = hour.startHour + '00  |  ' + hour.startLongDay + ' ' + hour.startDay + ', ' + hour.startLongMonth;
 			hour.shortOptText = hour.startHour + ' on  ' + hour.startShortDay + ' ' + hour.startDay + ', ' + hour.startShortMonth;
-
 			hour.weatherIconURL = 'http://openweathermap.org/img/wn/' + hour.weather[0].icon + '@2x.png';
 			hour.temp = Math.floor(hour.temp);
 			hour.feels_like = Math.floor(hour.feels_like);
@@ -130,7 +127,6 @@ var app = angular.module('temperature-app', [])
 			});
 
 		});
-		console.log($scope.Routes[RouteIndex].clothing)
 	};
 
 	$scope.RemoveRoute = function(RouteIndex)
