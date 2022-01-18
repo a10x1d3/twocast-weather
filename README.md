@@ -1,2 +1,2 @@
 # twocast-weather
-Cold weather clothing planning for cold weather cyclists
+48 hour weather planning for cold weather cyclists
