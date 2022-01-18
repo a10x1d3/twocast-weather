@@ -138,7 +138,7 @@
 #cyclecast-app tabs span:first-child {
 	border-top-left-radius: 3px;
 }
-#cyclecast-app tabs span:first-child {
+#cyclecast-app tabs span:last-child {
 	border-top-right-radius: 3px;
 }
 #cyclecast-app .tab-body {
