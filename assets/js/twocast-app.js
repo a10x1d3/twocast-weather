@@ -3,8 +3,8 @@ var app = angular.module('twocast-weather', [])
 	.controller('twoCastWeatherCtrl', function($scope, $http, $window) {
 	
 	$scope.config = {
-		development: true,
-		production: false
+		development: false,
+		production: true
 	}
 	
 	$scope.windowWidth = $window.innerWidth;
