@@ -148,7 +148,6 @@ var app = angular.module('twocast-weather', [])
 			
 			$scope.Routes[RouteIndex].clothing[category.name] = [];
 			category.clothing.forEach(clothingArticle => {
-				// if (clothingArticle.min <= feelsLike && clothingArticle.max >= feelsLike)
 				if ((clothingArticle.min <= feelsLike && clothingArticle.max >= feelsLike) || (clothingArticle.isRainArticle && $scope.Routes[RouteIndex].data.willRain) )
 				{
 					$scope.Routes[RouteIndex].clothing[category.name].push(clothingArticle)
