@@ -55,7 +55,7 @@
 |*| Dark Theme Color Configuration
 \*/
 #cyclecast-app.dark-theme { background-color: #343434; }
-#cyclecast-app.dark-theme #themer { border: 1px solid #5C5C5C; }
+#cyclecast-app.dark-theme #themer { border: 2px solid #5C5C5C; }
 #cyclecast-app.dark-theme #themer #slider { background-color: #5C5C5C; }
 #cyclecast-app.dark-theme #themer .theme { color: #F2F2F2; }
 #cyclecast-app.dark-theme tabs span { background-color: #484848; color: #BBBBBB; border-bottom: 2px solid #A6A6A6;   }
@@ -92,7 +92,7 @@
 #cyclecast-app #themer {
 	border: 1px solid #FFF;
 	margin: 4px 0px 0px 0px;
-	padding: 2px 2px 2px 2px;
+	padding: 2px 3px 2px 3px;
 	position: relative;
 	height: 19.5px;
 }
@@ -135,6 +135,12 @@
 	cursor: pointer;
 	font-size: .8rem;
 }
+#cyclecast-app tabs span:first-child {
+	border-top-left-radius: 3px;
+}
+#cyclecast-app tabs span:first-child {
+	border-top-right-radius: 3px;
+}
 #cyclecast-app .tab-body {
 	margin: 15px 0px 0px 0px;
 	padding: 6px 6px 6px 6px;
@@ -165,7 +171,7 @@
 }
 #cyclecast-app .route-desc {
 	margin: 3px 0px 2px 0px;
-	padding: 4px 3px 4px 5px;
+	padding: 6px 3px 4px 5px;
 }
 #cyclecast-app .weather-icon {
 	height: 45px;
