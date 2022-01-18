@@ -267,8 +267,8 @@ var hourlyForecast = {
         "pop": 0
     }, {
         "dt": 1641704400,
-        "temp": 24.78,
-        "feels_like": 16.32,
+        "temp": 68.78,
+        "feels_like": 62.32,
         "pressure": 1034,
         "humidity": 83,
         "dew_point": 20.14,
@@ -280,8 +280,8 @@ var hourlyForecast = {
         "wind_gust": 31.41,
         "weather": [{
             "id": 801,
-            "main": "Clouds",
-            "description": "few clouds",
+            "main": "Rain",
+            "description": "moderate rain",
             "icon": "02n"
         }],
         "pop": 0

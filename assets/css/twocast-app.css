@@ -21,11 +21,14 @@
 #cyclecast-app .font-p9rem { font-size: .9rem; }
 #cyclecast-app .font-p8rem { font-size: .8rem; }
 #cyclecast-app .font-p7rem { font-size: .7rem; }
-#cyclecast-app .icon-10 { height: 10px; width: 10px; }
-#cyclecast-app .icon-15 { height: 15px; width: 15px; }
-#cyclecast-app .icon-20 { height: 20px; width: 20px; }
-#cyclecast-app .icon-25 { height: 25px; width: 25px; }
-#cyclecast-app .icon-30 { height: 30px; width: 30px; }
+#cyclecast-app .consolas { font-family: "consolas" !important; }
+#cyclecast-app .icon-10x10 { height: 10px; width: 10px; }
+#cyclecast-app .icon-15x15 { height: 15px; width: 15px; }
+#cyclecast-app .icon-20x20 { height: 20px; width: 20px; }
+#cyclecast-app .icon-25x25 { height: 25px; width: 25px; }
+#cyclecast-app .icon-30x30 { height: 30px; width: 30px; }
+#cyclecast-app .icon-40x40 { height: 40px; width: 40px; }
+#cyclecast-app .icon-45x45 { height: 45px; width: 45px; }
 #cyclecast-app .app-orange-text {	color: #EC6E4C; }
 #cyclecast-app .app-light-text { color: #F2F2F2; }
 #cyclecast-app .app-dark-grey-text { color: #484848; }
@@ -157,6 +160,9 @@
 	margin: 0px 0px 0px 8px;
 	line-height: 45px;
 }
+#cyclecast-app .forecast-data img {
+	margin: 0px 0px -6px 0px;
+}
 #cyclecast-app .route-desc {
 	margin: 3px 0px 2px 0px;
 	padding: 4px 3px 4px 5px;
@@ -164,6 +170,11 @@
 #cyclecast-app .weather-icon {
 	height: 45px;
 	width: 45px;
+}
+#cyclecast-app .precip {
+	display: inline-block;
+	width: 16px;
+	line-height: .9rem;
 }
 #cyclecast-app tr:first-child {
 	border-top: none;	
@@ -181,11 +192,15 @@
 }
 #cyclecast-app .article-name p {
 	padding: 0px 0px 0px 6px;
-	width: 120px;
+	width: 118px;
 }
 #cyclecast-app .article-limit p {
-	width: 40px;
+	width: 55px;
 	color: #A6A6A6;
+}
+#cyclecast-app .article-limit sup {
+	vertical-align: super;
+	font-size: .6rem;
 }
 #cyclecast-app .article-field {
 	width: 65px;
@@ -196,7 +211,7 @@
 }
 
 /*\
-|*| Button UI
+|*| Application Button UI
 \*/
 #cyclecast-app .app-cta-box {
 	margin: 15px 0px 0px 0px;
@@ -218,7 +233,9 @@
 	height: 14px;
 	float: left;
 	width: 16px;
-	fill: #484848;
+}
+#cyclecast-app .app-cta.cancel svg path {
+	fill: #EC6E4C;
 }
 #cyclecast-app .app-cta.inline {
 	height: 7px;

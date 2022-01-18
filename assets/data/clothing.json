@@ -1,8 +1,23 @@
 var clothing = 
 [
     {
+        "name": "Helmet",
+        "darkSVG": "./assets/images/article-icons/helmet-dark.svg",
+        "lightSVG": "./assets/images/article-icons/helmet-light.svg",
+        "sizeBy": "width",
+        "clothing": [
+            {
+                "name": "Helmet Cover",
+                "min": "0",
+                "max": "34",
+                "isRainArticle": true
+            }
+        ]
+    },
+    {
         "name": "Head",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/head-dark.svg",
+        "lightSVG": "./assets/images/article-icons/head-light.svg",
         "sizeBy": "width",
         "clothing":
         [
@@ -10,25 +25,20 @@ var clothing =
                 "name": "Cycling Cap",
                 "min": "45",
                 "max": "110",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Wool Cap",
                 "min": "0",
                 "max": "45",
-                "rainArticle": false
-            },
-            {
-                "name": "Helmet Cover",
-                "min": "0",
-                "max": "34",
-                "rainArticle": true
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Neck",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/neck-dark.svg",
+        "lightSVG": "./assets/images/article-icons/neck-light.svg",
         "sizeBy": "width",
         "clothing":
         [
@@ -36,13 +46,14 @@ var clothing =
                 "name": "Neck Buff",
                 "min": "0",
                 "max": "40",
-                "rainArticle": false
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Torso",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/torso-dark.svg",
+        "lightSVG": "./assets/images/article-icons/torso-light.svg",
         "sizeBy": "width",
         "clothing":
         [
@@ -50,37 +61,52 @@ var clothing =
                 "name": "T-Shirt",
                 "min": "55",
                 "max": "110",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Beefy-T",
                 "min": "0",
                 "max": "54",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Under Armour",
                 "min": "0",
                 "max": "45",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
-                "name": "Light Jacket",
+                "name": "Rain Jacket",
                 "min": "39", 
                 "max": "49",
-                "rainArticle": true
+                "isRainArticle": true
             },
             {
                 "name": "Heavy Jacket",
                 "min": "0",
                 "max": "38",
-                "rainArticle": false
+                "isRainArticle": false
+            }
+        ]
+    },
+    {
+        "name": "Arms",
+        "darkSVG": "./assets/images/article-icons/arms-dark.svg",
+        "lightSVG": "./assets/images/article-icons/arms-light.svg",
+        "sizeBy": "width",
+        "clothing": [
+            {
+                "name": "Neoprene sleeve",
+                "min": "55",
+                "max": "110",
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Hands",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/hands-dark.svg",
+        "lightSVG": "./assets/images/article-icons/hands-light.svg",
         "sizeBy": "height",
         "clothing":
         [
@@ -88,25 +114,26 @@ var clothing =
                 "name": "Fingerless Gloves",
                 "min": "45",
                 "max": "110",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Finger Gloves",
                 "min": "0",
                 "max": "44",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Bar Mitts",
                 "min": "0",
                 "max": "24",
-                "rainArticle": false
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Legs",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/legs-dark.svg",
+        "lightSVG": "./assets/images/article-icons/legs-light.svg",
         "sizeBy": "height",
         "clothing":
         [
@@ -114,25 +141,32 @@ var clothing =
                 "name": "Shorts",
                 "min": "50",
                 "max": "110",
-                "rainArticle": true
+                "isRainArticle": false
+            },
+            {
+                "name": "Rain pants",
+                "min": "45",
+                "max": "100",
+                "isRainArticle": true
             },
             {
                 "name": "Light Tights",
                 "min": "35",
                 "max": "49",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Heavy Tights",
                 "min": "0",
                 "max": "34",
-                "rainArticle": false
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Ankles",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/ankles-dark.svg",
+        "lightSVG": "./assets/images/article-icons/ankles-light.svg",
         "sizeBy": "height",
         "clothing":
         [
@@ -140,25 +174,26 @@ var clothing =
                 "name": "Ankle Socks",
                 "min": "45",
                 "max": "110",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Long Socks",
                 "min": "24",
                 "max": "44",
-                "rainArticle": false
+                "isRainArticle": false
             },
             {
                 "name": "Wool Socks",
                 "min": "0",
                 "max": "23",
-                "rainArticle": false
+                "isRainArticle": false
             }
         ]
     },
     {
         "name": "Feet",
-        "svgPath": "./assets/images/app-icons/body-torso.svg",
+        "darkSVG": "./assets/images/article-icons/feet-dark.svg",
+        "lightSVG": "./assets/images/article-icons/feet-light.svg",
         "sizeBy": "height",
         "clothing":
         [
@@ -166,7 +201,7 @@ var clothing =
                 "name": "Overshoes",
                 "min": "0",
                 "max": "32",
-                "rainArticle": true
+                "isRainArticle": true
             }
         ]
     }

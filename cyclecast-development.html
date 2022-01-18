@@ -16,6 +16,7 @@
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script type="text/javascript" src="assets/js/angular.min.js"></script>
 <script type="text/javascript" src="assets/js/twocast-app.js"></script>
+<script type="text/javascript" src="assets/data/weather-api.js"></script>
 <script type="text/javascript" src="assets/data/openweathermap.onecall.js"></script>
 <script type="text/javascript" src="assets/data/clothing.json"></script>
 
@@ -84,7 +85,7 @@
 						<span class="b">{{ Routes[$index].data.wind_gust }}</span>
 						<span>mph</span>
 						<span>
-							<img src="assets/images/wind-icon-color.png" alt="" style="height: 12px;">
+							<img src="assets/images/app-icons/wind-accent.svg" alt="" class="icon-20x20">
 						</span>
 					</p>
 				</li>
@@ -97,7 +98,7 @@
 						<span class="b">{{ Routes[$index].data.wind_gust }}</span>
 						<span>mph</span>
 						<span>
-							<img src="assets/images/wind-icon-color.png" alt="" style="height: 12px;">
+							<img src="assets/images/app-icons/wind-accent.svg" alt="" class="icon-20x20">
 						</span>
 					</p>
 				</li>
@@ -117,10 +118,20 @@
 				</thead>
 				<tr ng-repeat="eachCategory in clothing" ng-if="route.clothing[eachCategory.name].length">
 					<td class="title valign-m" ng-class="">
-						<img ng-src="{{ eachCategory.svgPath }}" class="icon-30">
+						<img ng-src="{{ eachCategory.lightSVG }}" ng-if="ui.activeTheme == 'light'" class="icon-45x45">
+						<img ng-src="{{ eachCategory.darkSVG }}" ng-if="ui.activeTheme == 'dark'" class="icon-45x45">
 					</td>
+					<!-- <td class="precip"> -->
+						
+					<!-- </td> -->
 					<td class="article valign-m font-p9rem">
 						<p ng-repeat="eachArticle in route.clothing[eachCategory.name]">
+							<span class="valign-m precip">
+								<img src="assets/images/app-icons/rain-accent.svg"
+								     ng-if="route.data.willRain && eachArticle.isRainArticle"
+									 class="icon-15x15"
+									 alt="">
+							</span>
 							{{ eachArticle.name }}
 						</p>
 					</td>
@@ -179,28 +190,26 @@
 				
 				<table>
 					<tr>
-						<td class="title">
-							<p></p>
-						</td>
+						<td class="title"></td>
 						<td class="article valign-m">
 							<table>
 								<tr>
 									<td class="article-icon">
-										<img src="assets/images/app-icons/rain-icon-dark.png" 
+										<img src="assets/images/app-icons/rain-dark.svg" 
 										     ng-if="ui.activeTheme == 'light'"    
-										     class="icon-15 valign-m">
-										<img src="assets/images/app-icons/rain-icon-light.png"
+										     class="icon-15x15 valign-m">
+										<img src="assets/images/app-icons/rain-light.svg"
 										     ng-if="ui.activeTheme == 'dark'"
-											 class="icon-15 valign-m">
+											 class="icon-15x15 valign-m">
 									</td>
 									<td class="article-name b">
 										<p>Article</p>
 									</td>
 									<td class="article-limit tright b">
-										<p>Min</p>
+										<p>Min<sup>°F</sup></p>
 									</td>
 									<td class="article-limit tright b">
-										<p>Max</p>
+										<p>Max<sup>°F</sup></p>
 									</td>
 								</tr>
 							</table>
@@ -208,14 +217,19 @@
 					</tr>
 					<tr ng-repeat="eachCategory in clothing" >
 						<td class="title valign-m" ng-class="">
-							<img ng-src="{{ eachCategory.svgPath }}" class="icon-30">
+							<img ng-src="{{ eachCategory.darkSVG }}" ng-if="ui.activeTheme == 'dark'" class="icon-45x45">
+							<img ng-src="{{ eachCategory.lightSVG }}" ng-if="ui.activeTheme == 'light'" class="icon-45x45">
 						</td>
 						<td class="article valign-m font-p9rem">
 							<table class="tmp">
 								<tr ng-repeat="eachArticle in eachCategory.clothing">
 									<td class="article-icon">
-										<img src="assets/images/app-icons/check-icon-dark.png" class="icon-15 valign-m" ng-if="ui.activeTheme == 'light' && eachArticle.rainArticle">
-										<img src="assets/images/app-icons/check-icon-light.png" class="icon-15 valign-m" ng-if="ui.activeTheme == 'dark' && eachArticle.rainArticle">
+										<img src="assets/images/app-icons/rain-dark.svg"
+										     ng-if="ui.activeTheme == 'light' && eachArticle.isRainArticle"
+											 class="icon-15x15 valign-m">
+										<img src="assets/images/app-icons/rain-light.svg"
+										     ng-if="ui.activeTheme == 'dark' && eachArticle.isRainArticle"
+											 class="icon-15x15 valign-m" >
 									</td>
 									<td  class="article-name font-p8rem">
 										<p>
@@ -223,10 +237,10 @@
 										</p>
 									</td>
 									<td  class="article-limit tright font-p8rem">
-										<p>{{ eachArticle.min }}°F</p>
+										<p>{{ eachArticle.min }}°</p>
 									</td>
 									<td class="article-limit tright font-p8rem">
-										<p>{{ eachArticle.max }}°F</p>
+										<p>{{ eachArticle.max }}°</p>
 									</td>
 								</tr>
 							</table>							
@@ -239,58 +253,58 @@
 		<div ng-show="ui.activeTab == 'API Fields'">
 			<div class="tab-body">
 				<ul class="ul-content clearfix">
-					<li class="font-p9rem app-orange-text b">API Data</li>
+					<li class="font-p9rem app-orange-text b">API Fields</li>
 				</ul>
 
 				<table>
 					<tr>
-						<td class="title article-field tright app-dark-grey-text b">Field</td>
-						<td class="title b">Value</td>
+						<td class="title article-field tright app-dark-grey-text b consolas">Field</td>
+						<td class="title b consolas">Value</td>
 					</tr>
 					<tr>
-						<td class="article tright">key</td>
+						<td class="article tright consolas">key</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.key" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.key" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">baseURL</td>
+						<td class="article tright consolas">baseURL</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.baseURL" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.baseURL" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">callType</td>
+						<td class="article tright consolas">callType</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.callType" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.callType" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">lat</td>
+						<td class="article tright consolas">lat</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.lat" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.lat" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">long</td>
+						<td class="article tright consolas">long</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.long" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.long" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">exclude</td>
+						<td class="article tright consolas">exclude</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.exclude" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.exclude" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">units</td>
+						<td class="article tright consolas">units</td>
 						<td class="article">
-							<input type="text" class="app-border-radius shadow" ng-model="api.units" />
+							<input type="text" class="app-border-radius shadow consolas" ng-model="api.units" />
 						</td>
 					</tr>
 					<tr>
-						<td class="article tright">cnt</td>
+						<td class="article tright consolas">cnt</td>
 						<td class="article">
 							<input type="text" class="app-border-radius shadow" ng-model="api.cnt" />
 						</td>
