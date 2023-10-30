@@ -26,6 +26,9 @@ var app = angular.module('twocast-weather', [])
 		console.log('No external API Key supplied:');
 		console.log(' Include: <script type="text/javascript" src="assets/data/weather-api.js"></script>');
 		console.log(' File Contents: var externalAPIKey = "<32-Char OpenWeatherMap API Key>"');
+		
+		console.log('Manually setting API key');
+		$scope.api.key - '64ac8b40a1c9e0b5ca269f7dc399c70b'
 	}
 	else{
 		$scope.api.key = externalAPIKey;
@@ -59,6 +62,7 @@ var app = angular.module('twocast-weather', [])
 		}
 		
 		$scope.fullURL = `${$scope.api.baseURL + $scope.api.callType}?lat=${$scope.api.lat}&lon=${$scope.api.long}&exclude=${$scope.api.exclude}&appid=${$scope.api.key}&units=${$scope.api.units}&cnt=${$scope.api.cnt}`;
+		console.log($scope.fullURL)
 		$http.get($scope.fullURL)
 			.success(function (response)
 				{
